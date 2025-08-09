@@ -4,32 +4,73 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Clients</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <div class="addClient">
-        <h1>Manage Clients</h1>
-    <div class="client-form-con">
-                <img src="images/client.PNG" alt="">
+      <h1>Manage Clients</h1>
+      <div class="client-form-con">
+        <img src="images/client.PNG" alt="" />
         <div class="client-form">
-        <h2>Add New Client</h2>
-      <form action="">
-        <label for="name">Name<span style="color: red; font-weight: bolder;"> *</span></label>
-        <input type="text" id="name"  required/>
-        <label for="email">Email<span style="color: red; font-weight: bolder;"> *</span></label>
-        <input type="email" id="email" required/> 
-        <label for="company">Company Name<span style="color: red; font-weight: bolder;"> *</span></label>
-        <input type="text" required id="company"/> 
-        <label for="note">Note (Optional)</label>
-         <textarea name="" id="note"></textarea>
+          <h2>Add New Client</h2>
+          <form action="" id="clientForm">
+            <label for="name"
+              >Name<span style="color: red; font-weight: bolder">
+                *</span
+              ></label
+            >
+            <input type="text" id="name" required />
+            <label for="email"
+              >Email<span style="color: red; font-weight: bolder">
+                *</span
+              ></label
+            >
+            <input type="email" id="email" required />
+            <label for="company"
+              >Company Name<span style="color: red; font-weight: bolder">
+                *</span
+              ></label
+            >
+            <input type="text" required id="company" />
+            <label for="note">Note (Optional)</label>
+            <textarea name="" id="note"></textarea>
 
-        <button>Save Client</button>
-      </form>
+            <button>Save Client</button>
+          </form>
+        </div>
       </div>
-      </div>  
     </div>
+
+   <div class="clients">
+  <h2>Clients</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Company Name</th>
+        <th>Note</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <body id="clientTable">
+      <tr>
+        <td data-label="Name">Zahra Ali</td>
+        <td data-label="Email">zahra@gmail.com</td>
+        <td data-label="Company Name">ABC</td>
+        <td data-label="Note" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat est labore beatae necessitatibus omnis magni aut eveniet magnam alias numquam accusamus, facere ut assumenda eos, possimus doloribus placeat eum neque!</td>
+        <td data-label="action"><button>Edit</button></td>
+        <td data-label="action"><button>Delete</button></td>
+       </tr>
+    </body>
+  </table>
+</div>
+<script src="js/clients.js"></script>
   </body>
 </html>

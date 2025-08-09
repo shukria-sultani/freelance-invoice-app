@@ -1,33 +1,37 @@
 * {
-  font-family: "Roboto", sans-serif;
+    font-family: "Roboto", sans-serif;
+    padding: 0px;
+    margin: 0px;
 }
+
 .roboto-font {
-  font-family: "Roboto", sans-serif;
-  font-optical-sizing: auto;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
 }
+
 .addClient {
-    /* Center content on the page, like you already have */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     background-color: #FEFAE0;
-    padding: 50px 20px; /* Add horizontal padding for smaller screens */
+    padding: 50px 20px;
 }
 
 .client-form-con {
-margin-top: 20px;
+    margin-top: 20px;
     display: flex;
     flex-direction: row;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); 
-    border-radius: 12px; /* Add subtle rounded corners to the container */
-    overflow: hidden; /* Ensures shadow doesn't get clipped */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
 }
-.client-form-con img{
+
+.client-form-con img {
     width: 50%;
 }
+
 .client-form {
-    /* Clean up form container and remove the background image sizing */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -38,50 +42,46 @@ margin-top: 20px;
 }
 
 .client-form form {
-    /* Keep centering but use a column layout for better stacking */
     display: flex;
     flex-direction: column;
-    width: 100%; /* Make form fill its container */
-    gap: 15px; /* Increase gap for more breathing room */
+    width: 100%;
+    gap: 15px;
 }
 
 .client-form label {
-    /* Align labels to the left and give them more space */
     align-self: flex-start;
     font-weight: bold;
-    color: #333; /* Use a darker color for readability */
+    color: #333;
 }
 
 .client-form input,
 .client-form textarea {
-    /* Standardize all input fields for a consistent look */
     width: 100%;
-    padding: 12px 15px; /* Increase padding for a more spacious feel */
+    padding: 12px 15px;
     background-color: #FFFFFF;
-    border: 2px solid #EAEAEA; /* Use a softer gray border */
-    border-radius: 8px; /* Add subtle rounded corners */
+    border: 2px solid #EAEAEA;
+    border-radius: 8px;
     outline: none;
-    transition: border-color 0.3s ease-in-out; /* Add a smooth transition for hover/focus */
+    transition: border-color 0.3s ease-in-out;
 }
 
 .client-form input:focus,
 .client-form textarea:focus {
-    border-color: #FFCF50; /* Highlight with your accent color on focus */
+    border-color: #FFCF50;
 }
 
 #note {
-    min-height: 100px; /* Give the notes field more vertical space */
-    resize: vertical; /* Allow resizing only vertically */
+    min-height: 100px;
+    resize: vertical;
 }
 
 .client-form form button {
-    /* Create a more professional button style */
     width: 100%;
-    padding: 15px; /* More padding for a larger touch target */
-    font-size: 1.1rem; /* Slightly larger font */
+    padding: 15px;
+    font-size: 1.1rem;
     background-color: #FFCF50;
     border: none;
-    color: #333; /* Darker text for better readability against yellow */
+    color: #333;
     font-weight: bold;
     cursor: pointer;
     border-radius: 8px;
@@ -90,11 +90,9 @@ margin-top: 20px;
 }
 
 .client-form form button:hover {
-    background-color: #e6b948; /* Slightly darker shade on hover */
-    transform: translateY(-2px); /* Lift the button slightly for a nice effect */
+    background-color: #e6b948;
+    transform: translateY(-2px);
 }
-
-/* ... Your existing styles for desktop ... */
 
 @media (max-width: 600px) {
     .client-form-con {
@@ -102,45 +100,122 @@ margin-top: 20px;
         width: 100%;
         margin-top: 0;
         border-radius: 0;
-        /* Removed padding here to apply it to the main container instead */
         align-items: center;
         justify-content: center;
     }
-    .client-form-con img{
-    width: 100%;
-}
+
+    .client-form-con img {
+        width: 100%;
+    }
+
     .addClient {
-        /* This container is now responsible for horizontal padding */
         padding: 20px 0px;
     }
 
     .client-form {
-        padding: 20px; /* Add some padding back to the form block */
+        padding: 20px;
         width: 100%;
-        box-sizing: border-box; /* This is crucial for padding to work correctly */
-        border-radius: 12px; /* Re-apply rounded corners to the form itself */
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Add a new shadow to the form block */
+        box-sizing: border-box;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
 
     .client-form form {
         width: 100%;
-        padding: 0; /* Remove padding from the form element itself */
+        padding: 0;
         justify-content: center;
         align-items: center;
     }
 
     .client-form input,
     #note {
-        /*
-          * The key fix: Change to width: 100%
-          * This allows the inputs to expand to the full width of their parent container,
-          * which now has the proper padding.
-        */
         width: 95%;
-        min-width: unset; /* Remove the fixed min-width */
+        min-width: unset;
     }
 
     .client-form form button {
         width: 100%;
+    }
+}
+
+
+.clients {
+    background-color: #FFCF50;
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.clients h2 {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.clients table {
+    width: 60%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #FFFFFF; /* Add a solid background color */
+}
+
+.clients th, .clients td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #EAEAEA;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    max-width: 150px;
+}
+
+.clients th {
+    background-color: #f9d87d;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+    max-width: 400px;
+}
+
+.clients tr:nth-child(even) {
+    background-color: #FEFAE0;
+}
+.clients tr:nth-child(odd) {
+    background-color: #fcf5c8;
+}
+
+.clients tr:hover {
+    background-color: #FFE8B3;
+}
+
+.clients button {
+    background-color: #FFCF50;
+    border: none;
+    color: #333;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.clients button:hover {
+    background-color: #e6b948;
+}
+
+@media (max-width: 768px) {
+    .clients table {
+        width: 100%;
+        display: block;
+        overflow-x: auto; 
+        -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+    }
+
+    .clients th, .clients td {
+        white-space: nowrap;
+        max-width: 150px;
     }
 }
