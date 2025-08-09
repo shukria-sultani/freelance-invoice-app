@@ -336,3 +336,53 @@
     padding-top: 50px;
     background-color: #fcf5c8;
 }
+.summary{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   gap: 50px;
+    padding: 50px 20px;
+}
+.summary-con{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+       gap: 30px;
+}
+
+.summary-con div{
+    padding: 50px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;   
+    flex-direction: column; 
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+.summary-con div .inner-con{
+    background-color: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    border-radius: 50%;
+}
+.totalClients{
+    background-color: #333;
+    color: #ffff;
+}
+.totalInovices{
+    background-color: #fFff;
+}
+.inovicesValues{
+    background-color: #FFCF50;
+    color: #ffff;
+}
+
