@@ -191,7 +191,7 @@
     background-color: #FFE8B3;
 }
 
-.clients button {
+.invoices button, .clients button {
     background-color: #FFCF50;
     border: none;
     color: #333;

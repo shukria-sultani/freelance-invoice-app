@@ -3,65 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>invoices</title>
-        <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+    <title>Invoice Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-     <div class="invoiceMgnt">
-          <h1>Manage Invoices</h1>
-          <div class="addInvoice">
+    <div class="invoiceMgnt">
+        <h1>Manage Invoices</h1>
+        <div class="addInvoice">
             <h2>Create Invoice</h2>
-             <form action="">
+            <form id="invoiceForm">
                 <label for="clients">Choose Client <span style="color: red;">*</span></label>
-                <select name="" id="clients">   
+                <select id="clients" required>
+                    <option value="Ali">Ali</option>
+                    <option value="Zahra">Zahra</option>
                 </select>
                 <label for="service">Service Title <span style="color: red;">*</span></label>
                 <input type="text" id="service" required>
-                     <label for="description">Description <span style="color: red;">*</span></label>
+                <label for="description">Description <span style="color: red;">*</span></label>
                 <input type="text" id="description" required>
-                     <label for="amount">Amount (Do not forget that our currency is Afghani)<span style="color: red;"> *</span></label>
+                <label for="amount">Amount (Currency: Afghani) <span style="color: red;">*</span></label>
                 <input type="text" id="amount" required>
-                     <label for="date">Date <span style="color: red;">*</span></label>
+                <label for="date">Date <span style="color: red;">*</span></label>
                 <input type="date" id="date" required>
+                <button type="submit">Create Invoice</button>
+            </form>
+        </div>
+    </div>
 
-                <button>Create Invoice</button>
-             </form>
-          </div>
-     </div>
-   <div class="invoices" id="invoicesContainer">
-  <h2>Invoices</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Client</th>
-        <th>Service Title</th>
-        <th>Description </th>
-        <th>Amount</th>
-        <th>Date</th>
-      </tr>
-    </thead>
-    <tbody id="invoiceTable">
-        <tr>
-            <td>Ali</td>
-            <td>Laptop Repair</td>
-            <td>This is a description</td>
-            <td> Afs 55</td>
-            <td>02/1/2025</td>
-        </tr>
-            <tr>
-            <td>Ali</td>
-            <td>Laptop Repair</td>
-            <td>This is a description</td>
-            <td> Afs 55</td>
-            <td>02/1/2025</td>
-        </tr>
-    </tbody>
-  </table>
-</div>
-     <script src="js/invoices.js"></script>
+    <div class="invoices" id="invoicesContainer">
+        <h2>Invoices</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Client</th>
+                    <th>Service Title</th>
+                    <th>Description</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="invoiceTable">
+            </tbody>
+        </table>
+    </div>
+
+    <script src="js/invoices.js"></script>
 </body>
 </html>
