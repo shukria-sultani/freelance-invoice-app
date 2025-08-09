@@ -47,7 +47,7 @@
       </div>
     </div>
 
-   <div class="clients">
+   <div class="clients" id="clientsContainer">
   <h2>Clients</h2>
   <table>
     <thead>
@@ -59,18 +59,27 @@
         <th>Actions</th>
       </tr>
     </thead>
-    <body id="clientTable">
-      <tr>
-        <td data-label="Name">Zahra Ali</td>
-        <td data-label="Email">zahra@gmail.com</td>
-        <td data-label="Company Name">ABC</td>
-        <td data-label="Note" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat est labore beatae necessitatibus omnis magni aut eveniet magnam alias numquam accusamus, facere ut assumenda eos, possimus doloribus placeat eum neque!</td>
-        <td data-label="action"><button>Edit</button></td>
-        <td data-label="action"><button>Delete</button></td>
-       </tr>
-    </body>
+    <tbody id="clientTable">
+    
+    </tbody>
   </table>
 </div>
+
+
+    <!-- Modal for Editing Client -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEditModal()">&times;</span>
+            <h2>Edit Client</h2>
+            <input type="text" id="editName" placeholder="Client Name" required>
+            <input type="email" id="editEmail" placeholder="Client Email" required>
+            <input type="text" id="editCompany" placeholder="Company Name" required>
+            <textarea id="editNote" placeholder="Note" required></textarea>
+            <input type="hidden" id="editIndex">
+            <button onclick="updateClientInfo()">Update Client</button>
+        </div>
+    </div>
+
 <script src="js/clients.js"></script>
   </body>
 </html>
