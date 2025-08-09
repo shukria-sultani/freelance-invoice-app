@@ -18,7 +18,7 @@
     padding: 50px 20px;
 }
 
-.client-form-con {
+ .client-form-con {
     margin-top: 20px;
     display: flex;
     flex-direction: row;
@@ -48,13 +48,13 @@
     gap: 15px;
 }
 
-.client-form label {
+.addInvoice form label, .client-form label {
     align-self: flex-start;
     font-weight: bold;
     color: #333;
 }
 
-.client-form input,
+.addInvoice form select,  .addInvoice form input, .client-form input,
 .client-form textarea {
     width: 100%;
     padding: 12px 15px;
@@ -65,7 +65,7 @@
     transition: border-color 0.3s ease-in-out;
 }
 
-.client-form input:focus,
+.addInvoice form select,  .addInvoice form input, .client-form input:focus,
 .client-form textarea:focus {
     border-color: #FFCF50;
 }
@@ -75,7 +75,7 @@
     resize: vertical;
 }
 
-.client-form form button {
+.addInvoice form button, .client-form form button {
     width: 100%;
     padding: 15px;
     font-size: 1.1rem;
@@ -89,7 +89,7 @@
     transition: background-color 0.3s ease-in-out, transform 0.1s ease-in-out;
 }
 
-.client-form form button:hover {
+.addInvoice form button:hover, .client-form form button:hover {
     background-color: #e6b948;
     transform: translateY(-2px);
 }
@@ -155,14 +155,14 @@
     margin-bottom: 20px;
 }
 
-.clients table {
+.invoices table, .clients table {
     width: 60%;
     border-collapse: collapse;
     margin-top: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     background-color: #FFFFFF; 
 }
-.clients table th, .clients table td {
+.invoices table th, .invoices table td, .clients table th, .clients table td {
     padding: 15px;
     text-align: left;
     border-bottom: 1px solid #EAEAEA;
@@ -172,22 +172,22 @@
     text-overflow: ellipsis;
 }
 
-.clients table th {
+.invoices table th, .clients table th {
     background-color: #f9d87d;
     color: #333;
     font-weight: bold;
     text-transform: uppercase;
 }
 
-.clients tr:nth-child(even) {
+.invoices tr:nth-child(even), .clients tr:nth-child(even) {
     background-color: #FEFAE0;
 }
 
-.clients tr:nth-child(odd) {
+.invoices tr:nth-child(odd) , .clients tr:nth-child(odd) {
     background-color: #fcf5c8;
 }
 
-.clients tr:hover {
+.invoices tr:hover, .clients tr:hover {
     background-color: #FFE8B3;
 }
 
@@ -210,14 +210,14 @@
 }
 
 @media (max-width: 768px) {
-    .clients table {
+    .invoices table, .clients table {
         width: 100%;
         display: block;
         overflow-x: auto; 
         -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
     }
 
-    .clients th, .clients td {
+    .invoices th, .invoices td, .clients th, .clients td {
         white-space: nowrap;
         max-width: 150px;
     }
@@ -289,4 +289,50 @@
     text-decoration: none;
     cursor: pointer;
 }
+.invoiceMgnt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #FFCF50;
+    padding: 50px 20px;
+}
+.addInvoice{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 70px;
+    width: 50%;
+    background-color: #FEFAE0;
+}
+.addInvoice form{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 100%;
+    flex-direction: column;
+    padding-top: 30px;
+    gap: 20px;
+}
 
+
+@media (max-width: 768px){
+     .addInvoice{
+        width: 90%;
+        margin-top: 10px;
+        padding: 40px;
+     }
+}
+
+.invoices{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 50px;
+    background-color: #fcf5c8;
+}
