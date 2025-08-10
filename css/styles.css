@@ -360,8 +360,6 @@
     justify-content: center;
     align-items: center;   
     flex-direction: column; 
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     cursor: pointer;
 }
 .summary-con div .inner-con{
@@ -374,15 +372,25 @@
     margin-top: 20px;
     border-radius: 50%;
 }
+
 .totalClients{
     background-color: #333;
     color: #ffff;
+        border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+
 }
 .totalInovices{
     background-color: #fFff;
+        border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+
 }
 .inovicesValues{
     background-color: #FFCF50;
     color: #ffff;
+        border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+
 }
 

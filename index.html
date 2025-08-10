@@ -17,30 +17,40 @@
       <h2>Dashboard</h2>
       <div class="summary-con">
         <div class="totalClients">
-          <h2>Total Clients</h2>
+          <a href="clients.html" style="color: #ffff; text-decoration: none;">
+          <h2 title="Go to clients page" >Total Clients</h2>
+             </a>
           <div class="inner-con">
             <img src="images/clients.png" alt="client" width="50px" height="50px"/>
-            <h2>3</h2>
-          </div>
-        </div>
-        <div class="totalInovices">
-          <h2>Total Invoices</h2>
-          <div class="inner-con">
-            <img src="images/invoice.png" alt="invoice" width="50px" height="50px" />
-            <h2>5</h2>
-          </div>
-        </div>
-        <div class="inovicesValues">
-          <h2>Total Invoices Value</h2>
-          <div class="inner-con">
-            <img src="images/money.png" alt="money" width="50px" height="50px" />
-               <h2>Afs 5000</h2>
+            <h2 id="totalClients"></h2>
           </div>
        
+        </div>
+        <div class="totalInovices">
+          <a href="invoices.html" style="color: black; text-decoration: none;">
+          <h2 title="Go to invoices page" >Total Invoices</h2>
+             </a>
+          <div class="inner-con">
+            <img src="images/invoice.png" alt="invoice" width="50px" height="50px" />
+            <h2 id="totalInvoices"></h2>
+          </div>
+       
+        </div>
+        <div class="inovicesValues">
+          <a href="invoices.html" style="color: #ffff; text-decoration: none;">
+          <h2 title="Go to invoices page" >Total Invoices Value</h2>
+           </a>
+          <div class="inner-con">
+            <img src="images/money.png" alt="money" width="50px" height="50px" />
+               <h2 id="invoicesValue"></h2>
+          </div>
+
         </div>
       </div>
     </div>
 
-    <script src="js/main.js"></script>
+
+
+   <script src="js/main.js"></script>
   </body>
 </html>
