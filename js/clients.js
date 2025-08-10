@@ -1,17 +1,3 @@
-let clients = [
-    {
-        clientName: "Ahmad Haidari",
-        clientEmail: "ahmad@gmail.com",
-        company: "Tech World",
-        note: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    },
-    {
-        clientName: "Ali Haidari",
-        clientEmail: "ali@gmail.com",
-        company: "Tech World",
-        note: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    },
-];
 
 // Load existing clients from localStorage
 const loadClients = () => {
