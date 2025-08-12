@@ -20,7 +20,7 @@ const showTotals = () => {
 const showQuotes = async () => {
   let quote = document.getElementById("quote");
   let author = document.getElementById("author");
-  let quotesFile = "/data/quotes.json";
+  let quotesFile = "./data/quotes.json";
 
   try {
     let response = await fetch(quotesFile);
