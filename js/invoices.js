@@ -1,6 +1,8 @@
+import { getStoredData, setStoredData } from './utils.js';
+
 // Show clients in dropdown
 const showClientDropdown = () => {
-    const savedClients = JSON.parse(localStorage.getItem("clients")) || []; 
+    const savedClients = getStoredData("clients"); 
     console.log(savedClients);
     const dropdown = document.getElementById("clients");
     dropdown.innerHTML = ""; 
@@ -15,12 +17,8 @@ window.addEventListener('load', () => {
     showClientDropdown();
 });
 
-// Function to load invoices from local storage
-let invoices = []
-function loadInvoices() {
-    const invoices = JSON.parse(localStorage.getItem('invoices')) || [];
-    invoices.forEach(invoice => addInvoiceToTable(invoice));
-}
+// Use utility functions to load invoices
+let invoices = getStoredData("invoices");
 
 // Function to add an invoice to the table
 function addInvoiceToTable(invoice) {
@@ -42,26 +40,17 @@ function generateId() {
     return '_' + Math.random().toString(36).substr(2, 9);
 }
 
-// Function to check for duplicates
-function isDuplicateInvoice(newInvoice) {
-    const invoices = JSON.parse(localStorage.getItem('invoices')) || [];
-    return invoices.some(invoice =>
-        invoice.client === newInvoice.client &&
-        invoice.serviceTitle === newInvoice.serviceTitle &&
-        invoice.date === newInvoice.date
-    );
-}
-
 // Function to mark an invoice as paid
 function markAsPaid(invoiceId) {
-    const invoices = JSON.parse(localStorage.getItem('invoices')) || [];
+    const invoices = getStoredData("invoices");
     const updatedInvoices = invoices.map(invoice => {
         if (invoice.id === invoiceId) {
-            invoice.paid = true; // Mark as paid
+            invoice.paid = true;
         }
         return invoice;
     });
-    localStorage.setItem('invoices', JSON.stringify(updatedInvoices));
+    setStoredData('invoices', updatedInvoices);
+    
     // Refresh the table
     document.getElementById('invoiceTable').innerHTML = '';
     updatedInvoices.forEach(invoice => addInvoiceToTable(invoice));
@@ -89,21 +78,27 @@ document.getElementById('invoiceForm').addEventListener('submit', function(event
         client,
         serviceTitle,
         description,
-        amount: parseFloat(amount), // Convert to number
+        amount: parseFloat(amount),
         date,
-        paid: false // Initial status
+        paid: false
     };
 
-    // Check for duplicates
-    if (isDuplicateInvoice(invoice)) {
+    // Use the getStoredData utility function to check for duplicates
+    const invoicesData = getStoredData('invoices');
+    const isDuplicate = invoicesData.some(existingInvoice =>
+        existingInvoice.client === invoice.client &&
+        existingInvoice.serviceTitle === invoice.serviceTitle &&
+        existingInvoice.date === invoice.date
+    );
+
+    if (isDuplicate) {
         alert('This invoice already exists. Please enter a different invoice.');
         return;
     }
 
-    // Save to local storage
-    const invoices = JSON.parse(localStorage.getItem('invoices')) || [];
-    invoices.push(invoice);
-    localStorage.setItem('invoices', JSON.stringify(invoices));
+    // Use the getStoredData and setStoredData utility functions
+    invoicesData.push(invoice);
+    setStoredData('invoices', invoicesData);
 
     // Add invoice to table
     addInvoiceToTable(invoice);
@@ -113,4 +108,6 @@ document.getElementById('invoiceForm').addEventListener('submit', function(event
 });
 
 // Load invoices on page load
-window.onload = loadInvoices;
+window.onload = () => {
+    invoices.forEach(invoice => addInvoiceToTable(invoice));
+};
