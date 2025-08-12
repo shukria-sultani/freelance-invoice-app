@@ -16,6 +16,7 @@ window.addEventListener('load', () => {
 });
 
 // Function to load invoices from local storage
+let invoices = []
 function loadInvoices() {
     const invoices = JSON.parse(localStorage.getItem('invoices')) || [];
     invoices.forEach(invoice => addInvoiceToTable(invoice));

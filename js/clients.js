@@ -1,4 +1,4 @@
-
+let clients = [];
 // Load existing clients from localStorage
 const loadClients = () => {
     const storedClients = JSON.parse(localStorage.getItem("clients"));
