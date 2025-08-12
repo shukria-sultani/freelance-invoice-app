@@ -1,11 +1,9 @@
-let clients = [];
-// Load existing clients from localStorage
-const loadClients = () => {
-    const storedClients = JSON.parse(localStorage.getItem("clients"));
-    if (storedClients) {
-        clients = storedClients;
-    }
-};
+// Import the utility functions from the new file
+import { getStoredData, setStoredData } from './utils.js'
+
+// Load clients directly 
+let clients = getStoredData("clients");
+
 
 // Add clients
 const clientForm = document.getElementById("clientForm");
@@ -35,8 +33,8 @@ clientForm.addEventListener("submit", (e) => {
         clients.push(newClient);
     }
 
-    // Update localStorage
-    localStorage.setItem("clients", JSON.stringify(clients));
+      // Use the utility function to update localStorage
+    setStoredData("clients", clients);
 
     alert("Successfully Added the Client!");
     showClients();
@@ -45,7 +43,6 @@ clientForm.addEventListener("submit", (e) => {
 
 // Show the clients dynamically
 document.addEventListener("DOMContentLoaded", () => {
-    loadClients();
     showClients();
 });
 
