@@ -53,9 +53,9 @@ const showClients = () => {
     const clientTableBody = document.getElementById("clientTable");
     if (!clientTableBody) {
         console.error("clientTable is undefined. Check if the table exists in the DOM.");
-        return; // Exit the function if the element is not found
+        return; 
     }
-    clientTableBody.innerHTML = ""; // Clear existing rows
+    clientTableBody.innerHTML = ""; 
     clients.forEach((client, index) => {
         let row = clientTableBody.insertRow();
         row.innerHTML = `

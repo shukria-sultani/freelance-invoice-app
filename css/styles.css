@@ -402,3 +402,81 @@
    max-width: 700px;
    max-height: 700px;
 }
+.quote-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quotes {
+  position: relative;
+  max-width: 700px; 
+  padding: 60px; 
+  border-radius: 20px; 
+  background: #ffffff;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  transition: transform 0.3s ease-in-out;
+  margin-top: 50px;
+}
+
+
+.quotes:hover {
+  transform: translateY(-5px);
+}
+
+
+.quotes::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 207, 80, 0.8), rgba(254, 250, 224, 0.8));
+  clip-path: polygon(0 0, 100% 0, 100% 40%, 0 100%);
+  z-index: 0;
+  opacity: 0.8;
+}
+
+#quote {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.8rem;
+  font-style: italic;
+  font-weight: 300;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  position: relative;
+  z-index: 2; 
+}
+
+#author {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #555;
+  margin-top: 10px;
+  align-self: flex-end;
+  position: relative;
+  z-index: 2;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .quotes {
+    padding: 40px 25px;
+    max-width: 90%;
+  }
+  #quote {
+    font-size: 1.3rem;
+  }
+  #author {
+    font-size: 0.9rem;
+  }
+}
