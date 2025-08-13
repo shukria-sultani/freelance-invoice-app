@@ -78,7 +78,7 @@ const openEditModal = (index) => {
     document.getElementById("editIndex").value = index;
     document.getElementById("editModal").style.display = "block"; // Show the modal
 };
-
+window.openEditModal = openEditModal;
 // Update client information
 const updateClientInfo = () => {
     const index = document.getElementById("editIndex").value;
@@ -87,12 +87,12 @@ const updateClientInfo = () => {
     clients[index].company = document.getElementById("editCompany").value;
     clients[index].note = document.getElementById("editNote").value;
 
-    localStorage.setItem("clients", JSON.stringify(clients));
+   setStoredData("clients", clients); 
     alert("Client information updated!");
     showClients();
     closeEditModal(); // Close the modal
 };
-
+window.updateClientInfo = updateClientInfo;
 // Close the modal
 const closeEditModal = () => {
     document.getElementById("editModal").style.display = "none"; // Hide the modal
@@ -101,6 +101,9 @@ const closeEditModal = () => {
 // Delete a client
 const deleteClient = (index) => {
     clients.splice(index, 1);
-    localStorage.setItem("clients", JSON.stringify(clients));
+    setStoredData("clients", clients); 
+    alert("Client deleted successfully!");
     showClients();
 };
+
+window.deleteClient = deleteClient;
