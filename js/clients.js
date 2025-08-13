@@ -1,4 +1,4 @@
-// Import the utility functions from the new file
+// Import the utility functions from the utils file
 import { getStoredData, setStoredData } from './utils.js'
 
 // Load clients directly 

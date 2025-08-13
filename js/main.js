@@ -34,7 +34,7 @@ const showQuotes = async () => {
     let randomQuote = data[randomQuoteIndex];
 
     quote.textContent = randomQuote.text;
-    author.textContent = randomQuote.author;
+    author.textContent = randomQuote.author ? randomQuote.author : "Unknown";
   } catch (error) {
     quote.textContent = "Failed to load quote. Please try again.";
     author.textContent = " ";
