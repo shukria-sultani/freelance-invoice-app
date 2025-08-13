@@ -3,7 +3,6 @@ import { getStoredData, setStoredData } from './utils.js';
 // Show clients in dropdown
 const showClientDropdown = () => {
     const savedClients = getStoredData("clients"); 
-    console.log(savedClients);
     const dropdown = document.getElementById("clients");
     dropdown.innerHTML = ""; 
     savedClients.forEach((client) => {
@@ -55,7 +54,7 @@ function markAsPaid(invoiceId) {
     document.getElementById('invoiceTable').innerHTML = '';
     updatedInvoices.forEach(invoice => addInvoiceToTable(invoice));
 }
-
+window.markAsPaid = markAsPaid; 
 // Form submission handler
 document.getElementById('invoiceForm').addEventListener('submit', function(event) {
     event.preventDefault();
